@@ -9,17 +9,17 @@ public class Review {
   @Id
   @GeneratedValue
   private Long id;
-@NotBlank
+  @NotBlank
   private String restaurantName;
-@NotBlank
+  @NotBlank
   private String location;
-@NotBlank
+  @NotBlank
   private Integer rating;
-@NotBlank
+  @NotBlank
   private Date visited;
-@NotBlank
+  @NotBlank
   private String bestItem;
-@NotBlank
+  @NotBlank
   private String notes;
   public Review(){
     super();

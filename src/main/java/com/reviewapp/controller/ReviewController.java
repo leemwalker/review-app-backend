@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class ReviewController {
 
-@Autowired
+  @Autowired
   ReviewRepository reviewRepository;
 
 // Get All Reviews
@@ -40,7 +40,7 @@ public class ReviewController {
     @Valid @RequestBody Review reviewDetails) throws ReviewNotFoundException {
 
     Review review = reviewRepository.findById(reviewId)
-    .orElseThrow(() -> new ReviewNotFoundException(reviewId));
+      .orElseThrow(() -> new ReviewNotFoundException(reviewId));
 
     review.setRestaurantName(reviewDetails.getRestaurantName());
     review.setLocation(reviewDetails.getLocation());
@@ -60,8 +60,8 @@ public class ReviewController {
     Review review = reviewRepository.findById(reviewId)
       .orElseThrow(() -> new ReviewNotFoundException(reviewId));
 
-reviewRepository.delete(review);
+    reviewRepository.delete(review);
 
-return ResponseEntity.ok().build();
+    return ResponseEntity.ok().build();
   }
 }
